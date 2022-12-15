@@ -16,20 +16,21 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async (newContact, thunkAPI) => {
+    const { contacts } = thunkAPI.getState();
+    if (
+      contacts.items.some(contact => {
+        return newContact.name.toLowerCase() === contact.name.toLowerCase();
+      })
+    ) {
+      return thunkAPI.rejectWithValue('Contact already exists');
+    }
+
     try {
       const response = await axios.post('/contacts', newContact);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
-  },
-  {
-    condition: (newContact, { getState }) => {
-      const { contacts } = getState();
-      return !contacts.items.some(contact => {
-        return newContact.name.toLowerCase() === contact.name.toLowerCase();
-      });
-    },
   }
 );
 

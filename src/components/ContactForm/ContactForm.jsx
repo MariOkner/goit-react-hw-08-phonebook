@@ -2,11 +2,9 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
 
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/contacts/selectors';
+import { useDispatch } from 'react-redux';
+
 import { addContact } from 'redux/contacts/operations';
 
 import {
@@ -42,21 +40,8 @@ const validationSchema = yup.object({
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const [name] = useState('');
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
-    // const contact = { name, number };
-    if (
-      contacts.some(values => {
-        return values.name.toLowerCase() === name.toLowerCase();
-      })
-    ) {
-      toast.warn(`${name} is already in contacts`);
-      return;
-    }
-
     dispatch(addContact(values));
     resetForm();
   };

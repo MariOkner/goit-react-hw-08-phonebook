@@ -1,14 +1,10 @@
-import { Main, Title } from './Home.style';
+import { Container } from 'pages/Contacts/Contacts.styled';
+import { Image } from './Home.style';
 
 export default function Home() {
   return (
-    <Main>
-      <Title>
-        Task manager welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </Title>
-    </Main>
+    <Container>
+      <Image src={require('../../img/banner.jpg')} alt="a girl with a phone" />
+    </Container>
   );
 }

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFilter } from 'redux/filter/selectors';
+import { selectFilter } from 'redux/selectors';
 import { setFilter } from 'redux/filter/filterSlice';
 
 import { FilterLabel, FilterInput } from './Filter.styled';

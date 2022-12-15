@@ -2,8 +2,13 @@ import styled from '@emotion/styled';
 import { RiContactsBook2Fill } from 'react-icons/ri';
 
 export const Container = styled.div`
-  margin: 0 auto;
-  padding: 20px;
+  // minHeight: 'calc(100vh - 50px)',
+  // display: 'flex',
+  // alignItems: 'center',
+  // justifyContent: 'center'
+
+  // margin: 0 auto;
+  // padding: 20px;
 `;
 
 export const PhonebookIcon = styled(RiContactsBook2Fill)`

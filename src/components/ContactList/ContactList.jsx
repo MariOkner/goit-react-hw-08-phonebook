@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/operations';
+import { selectVisibleContacts } from 'redux/selectors';
 
 import {
   ContactListHTML,
@@ -9,7 +9,7 @@ import {
 } from './ContactList.styled';
 
 export const ContactList = () => {
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
   return (

@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Loader } from 'components/Loader/Loader';
 
 import { useEffect } from 'react';
@@ -10,7 +10,7 @@ import { fetchContacts } from 'redux/contacts/operations';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
-import { selectContacts, selectLoading } from 'redux/contacts/selectors';
+import { selectContacts, selectLoading, selectError } from 'redux/selectors';
 
 import {
   Container,
@@ -23,14 +23,20 @@ export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
   const contacts = useSelector(selectContacts);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (error) {
+      toast.warn(error);
+    }
+  }, [error]);
+
   return (
     <>
-      return (
       <Container>
         <TitlePhonebook title="Phonebook">
           <PhonebookIcon />
@@ -44,7 +50,6 @@ export default function Contacts() {
         {contacts.length === 0 ? null : <ContactList />}
         <ToastContainer />
       </Container>
-      );
     </>
   );
 }
