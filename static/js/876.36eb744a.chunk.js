@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[876],{876:function(e,t,n){n.r(t),n.d(t,{default:function(){return s}});var c,r,a=n(168),i=n(8789),u=i.ZP.main(c||(c=(0,a.Z)(["\n  width: 100%;\n"]))),h=i.ZP.img(r||(r=(0,a.Z)(["\n  width: 100%;\n"]))),o=n(184);function s(){return(0,o.jsx)(u,{children:(0,o.jsx)(h,{src:n(1118),alt:"a girl with a phone"})})}},1118:function(e,t,n){e.exports=n.p+"static/media/banner.7dcd10ec95df5c4cfcb0.jpg"}}]);
+//# sourceMappingURL=876.36eb744a.chunk.js.map
