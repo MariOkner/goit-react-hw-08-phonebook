@@ -6,18 +6,17 @@ import { Loader } from 'components/Loader/Loader';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
-// import { Helmet } from 'react-helmet';
+
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
-import { selectContacts, selectLoading, selectError } from 'redux/selectors';
-
 import {
-  Container,
-  PhonebookIcon,
-  TitlePhonebook,
-  TitleContacts,
-} from './Contacts.styled';
+  selectContacts,
+  selectLoading,
+  selectError,
+} from 'redux/contacts/selectors';
+
+import { Container, TitleContacts } from './Contacts.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -38,10 +37,6 @@ export default function Contacts() {
   return (
     <>
       <Container>
-        <TitlePhonebook title="Phonebook">
-          <PhonebookIcon />
-          Phonebook
-        </TitlePhonebook>
         {isLoading && <Loader />}
         <ContactForm />
 

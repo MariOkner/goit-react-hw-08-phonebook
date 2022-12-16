@@ -5,7 +5,7 @@ export const FilterLabel = styled.label`
   flex-direction: column;
   gap: 4px;
 
-  width: 320px;
+  width: 400px;
   margin-bottom: 30px;
 `;
 
@@ -13,6 +13,7 @@ export const FilterInput = styled.input`
   outline: none;
   border: 1px solid #000000;
   border-radius: 3px;
+  padding: 3px 200px 3px 10px;
 
   &:hover,
   &:focus {

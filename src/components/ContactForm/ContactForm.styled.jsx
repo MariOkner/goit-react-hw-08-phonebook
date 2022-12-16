@@ -26,6 +26,7 @@ export const FormLabel = styled.label`
 export const Field = styled(FormField)`
   outline: none;
 
+  padding: 3px 200px 3px 10px;
   border: 1px solid #000000;
   border-radius: 3px;
 
